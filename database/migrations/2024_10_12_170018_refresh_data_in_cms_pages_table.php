@@ -20,7 +20,7 @@ return new class extends Migration
         DB::table('cms_pages')->truncate();
         // Wstaw dane do tabeli
         DB::table('cms_pages')->insert([
-            'name' => 'Strona Główna - EXAMPLE DASHBOARD',
+            'name' => 'Strona Główna',
             'json_page' => $jsonData
         ]);
     }
