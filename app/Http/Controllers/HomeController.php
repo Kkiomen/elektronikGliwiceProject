@@ -18,12 +18,18 @@ class HomeController extends Controller
         $info = CmsPage::find(1);
 
         $randomArticles = Article::where('is_published', true)->where('type', 'normal')->inRandomOrder()->take(3)->get();
+        $idsRandom = [];
+        foreach ($randomArticles as $article){
+            $idsRandom[] = $article->id;
+        }
+        $randomArticlesSeconds = Article::where('is_published', true)->where('type', 'normal')->whereNotIn('id', $idsRandom)->inRandomOrder()->take(4)->get();
 
 
         return view('views_basic.welcome', array_merge(
             $info->to_view,
             [
-                'randomArticles' => $randomArticles
+                'randomArticles' => $randomArticles,
+                'randomArticlesSeconds' => $randomArticlesSeconds,
             ]
         ));
     }
