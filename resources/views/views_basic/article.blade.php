@@ -21,6 +21,8 @@
     <meta property="og:url" content="{{ $article->getRoute() }}" />
     <meta property="og:image" content="{{ $article->view_content['basic_website_structure_op_image_img_file'] }}" />
     <meta property=”og:type” content=”article” />
+
+    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPZGXDTPHG"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-GPZGXDTPHG'); </script>
 </head>
 <body>
 
