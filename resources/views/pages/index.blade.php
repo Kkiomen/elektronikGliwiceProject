@@ -67,6 +67,16 @@
                                     Przejdź do edycji
                                 </a>
                             </div>
+                            <div class="-ml-px flex w-0 flex-1 justify-center items-center">
+                                <form x-data @submit.prevent="confirmDelete($el)" action="{{ route('pages.destroy', $page) }}" method="POST"
+                                      class="inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">
+                                        Usuń
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </li>

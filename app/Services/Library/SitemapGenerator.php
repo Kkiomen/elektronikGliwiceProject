@@ -179,7 +179,7 @@ class SitemapGenerator
         }
         $this->incCurrentItem();
         $this->getWriter()->startElement('url');
-        $this->getWriter()->writeElement('loc', $this->getDomain() . $loc);
+        $this->getWriter()->writeElement('loc', $this->getDomain() . str_replace($this->getDomain(), '', $loc));
         $this->getWriter()->writeElement('priority', $priority);
         if ($changefreq)
             $this->getWriter()->writeElement('changefreq', $changefreq);
